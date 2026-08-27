@@ -1,0 +1,142 @@
+/* ==========================================================================
+   AdviseCAD — Tasarım Değişkenleri (Design Tokens)
+   Renk, tipografi, boşluk, gölge ve geçişler için TEK KAYNAK.
+   Sitede hiçbir yerde doğrudan renk kodu (#hex) yazılmaz; hepsi buradan gelir.
+   ========================================================================== */
+
+:root {
+  /* ---------- Marka yeşili ----------
+     Skala, AdviseCAD logosundan doğrudan örneklenmiştir:
+       #034642  logo markının gövde tonu   → --green-700
+       #045e57  logodaki "CAD" harfleri    → --green-600
+       #006c62  slogan ayraç çizgisi       → --green-500
+     Logoyu değiştirirseniz ölçüp bu üç değeri güncellemeniz yeterli. */
+  --green-950: #02120f; /* en koyu — koyu bölüm zeminleri */
+  --green-900: #032220;
+  --green-800: #033430;
+  --green-700: #034642; /* MARKA TONU — birincil buton, logo markı */
+  --green-600: #045e57;
+  --green-500: #06776e; /* ETKİLEŞİM TONU — hover, aktif link */
+  --green-400: #0f978b;
+  --green-300: #4bbcb0;
+  --green-200: #96dad2;
+  --green-100: #d3f0ec;
+  --green-50: #f0faf8; /* en açık — açık bölüm zeminleri */
+
+  /* ---------- Nötrler ----------
+     --ink-900, logodaki "Advise" yazısının lacivertidir (#121b28). */
+  --white: #ffffff;
+  --ink-900: #121b28; /* ana metin */
+  --ink-700: #2a3644; /* ikincil başlık */
+  --ink-500: #5b6675; /* gövde metni, açıklama */
+  --ink-400: #7d8794;
+  --ink-300: #a7b0bb; /* pasif metin */
+  --line: #e2e8ea; /* kenarlık */
+  --line-strong: #ccd5d8;
+
+  /* ---------- Vurgu (lazer ışığı) — çok sınırlı kullanılır ---------- */
+  --accent: #a8e63a;
+  --accent-soft: rgba(168, 230, 58, 0.16);
+
+  /* ---------- Anlamsal renkler ---------- */
+  --bg: var(--white);
+  --bg-soft: var(--green-50);
+  --bg-dark: var(--green-950);
+  --text: var(--ink-900);
+  --text-muted: var(--ink-500);
+  --text-on-dark: rgba(255, 255, 255, 0.92);
+  --text-on-dark-muted: rgba(211, 240, 236, 0.66);
+  --border: var(--line);
+  --border-on-dark: rgba(150, 218, 210, 0.2);
+
+  --danger: #c0392b;
+  --success: var(--green-500);
+
+  /* ---------- Tipografi ---------- */
+  --font-heading: "Space Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Mono", Consolas, "Courier New", monospace;
+
+  /* Akışkan (fluid) ölçek — clamp ile ekrana göre büyür/küçülür */
+  --fs-display: clamp(2.3rem, 1.75rem + 2.6vw, 3.5rem);
+  --fs-h1: clamp(2.1rem, 1.5rem + 2.8vw, 3.4rem);
+  --fs-h2: clamp(1.7rem, 1.35rem + 1.7vw, 2.5rem);
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.55rem);
+  --fs-h4: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
+  --fs-lead: clamp(1.05rem, 0.98rem + 0.35vw, 1.25rem);
+  --fs-body: 1rem;
+  --fs-sm: 0.9375rem;
+  --fs-xs: 0.8125rem;
+  --fs-label: 0.75rem;
+
+  --lh-tight: 1.1;
+  --lh-heading: 1.2;
+  --lh-body: 1.7;
+
+  --tracking-label: 0.12em;
+  --tracking-tight: -0.02em;
+
+  /* ---------- Boşluk ölçeği (4px tabanlı) ---------- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 2.5rem;
+  --sp-8: 3rem;
+  --sp-9: 4rem;
+  --sp-10: 5rem;
+  --sp-11: 6.5rem;
+  --sp-12: 8rem;
+
+  /* Bölüm iç boşluğu — ekrana göre akışkan */
+  --section-y: clamp(3.5rem, 2rem + 6vw, 7rem);
+
+  /* ---------- Yerleşim ---------- */
+  --container: 1200px;
+  --container-narrow: 860px;
+  --container-wide: 1400px;
+  --gutter: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
+  --header-h: 76px;
+
+  /* ---------- Köşe yarıçapı ---------- */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* ---------- Gölgeler ---------- */
+  --shadow-sm: 0 1px 2px rgba(18, 27, 40, 0.06), 0 1px 3px rgba(18, 27, 40, 0.05);
+  --shadow-md: 0 4px 12px rgba(18, 27, 40, 0.07), 0 2px 4px rgba(18, 27, 40, 0.04);
+  --shadow-lg: 0 12px 32px rgba(18, 27, 40, 0.1), 0 4px 8px rgba(18, 27, 40, 0.05);
+  --shadow-xl: 0 24px 60px rgba(2, 18, 15, 0.14), 0 8px 16px rgba(2, 18, 15, 0.06);
+  --shadow-green: 0 12px 28px rgba(3, 70, 66, 0.18);
+
+  /* ---------- Geçişler ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 140ms var(--ease-out);
+  --t-base: 240ms var(--ease-out);
+  --t-slow: 460ms var(--ease-out);
+
+  /* ---------- Katman sırası ---------- */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-header: 200;
+  --z-menu: 300;
+  --z-skip: 400;
+}
+
+/* Hareket azaltma tercihi — tüm animasyon ve geçişler etkisiz kalır */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

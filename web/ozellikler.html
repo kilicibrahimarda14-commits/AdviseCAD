@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Özellikler — Ölçüm, Maliyet ve Fiyatlandırma | AdviseCAD</title>
+<meta name="description" content="AdviseCAD'in ölçüm ve analiz, kesim maliyeti hesaplama, fiyatlandırma, malzeme ve üretim maliyeti analizi ile süreç yönetimi özellikleri.">
+<link rel="canonical" href="https://www.advisecad.com/ozellikler.html">
+<meta name="theme-color" content="#034642">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AdviseCAD">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Özellikler — Ölçüm, Maliyet ve Fiyatlandırma | AdviseCAD">
+<meta property="og:description" content="Ölçümden fiyata kadar bir teklifin tüm adımlarını tek yazılımda toplayan özellikler.">
+<meta property="og:url" content="https://www.advisecad.com/ozellikler.html">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/blocks.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="common.skipToContent">İçeriğe atla</a>
+
+<header class="header">
+  <div class="container header__inner">
+
+    <a class="logo" href="index.html">
+      <img class="logo__img" src="assets/logo.png" alt="AdviseCAD" width="668" height="176">
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menüyü aç veya kapat">
+    <span class="nav-toggle__button" aria-hidden="true"><span class="nav-toggle__bars"></span></span>
+
+    <nav class="nav" aria-label="Ana menü">
+      <div class="nav__inner">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" data-i18n="nav.home">Ana Sayfa</a></li>
+          <li><a class="nav__link" href="ozellikler.html" aria-current="page" data-i18n="nav.features">Özellikler</a></li>
+          <li><a class="nav__link" href="nasil-calisir.html" data-i18n="nav.how">Nasıl Çalışır?</a></li>
+          <li><a class="nav__link" href="fiyatlandirma.html" data-i18n="nav.pricing">Fiyatlandırma</a></li>
+          <li><a class="nav__link" href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a></li>
+          <li><a class="nav__link" href="iletisim.html" data-i18n="nav.contact">İletişim</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="header__actions">
+      <div class="header__actions-inner">
+        <a class="btn btn--primary" href="indir.html">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="common.downloadApp">Uygulamayı İndir</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ==================== SAYFA BAŞLIĞI ==================== -->
+  <section class="page-head">
+    <div class="container">
+      <div class="page-head__inner">
+        <nav aria-label="Sayfa yolu">
+          <ol class="breadcrumb">
+            <li><a href="index.html" data-i18n="nav.home">Ana Sayfa</a></li>
+            <li data-i18n="nav.features">Özellikler</li>
+          </ol>
+        </nav>
+        <h1 data-i18n="featuresPage.title">Bir teklifin arkasındaki her hesap, tek yazılımda</h1>
+        <p class="lead" data-i18n="featuresPage.lead">
+          AdviseCAD'in beş temel yeteneği birbirinin üzerine kurulur: önce parça ölçülür,
+          sonra kesim ve malzeme maliyeti çıkarılır, en sonunda satış fiyatı belirlenir.
+          Aşağıda her adımın ne yaptığını ve neyi hesaba kattığını bulacaksınız.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ÖZELLİK SATIRLARI ==================== -->
+  <div class="container">
+
+    <!-- 1 — ÖLÇÜM VE ANALİZ -->
+    <section class="feature-row" id="olcum">
+      <div class="feature-row__body">
+        <span class="eyebrow" data-i18n="featuresPage.f1.eyebrow">01 — Ölçüm ve Analiz</span>
+        <h2 class="feature-row__title" data-i18n="features.measure.title">Ölçüm ve Analiz</h2>
+        <p class="feature-row__text" data-i18n="featuresPage.f1.text">
+          Teknik resmi gözle inceleyip cetvelle ölçmek, teklif masasındaki en büyük hata
+          kaynağıdır. AdviseCAD dosyayı okuduğu anda parçanın geometrisini çözer ve
+          maliyeti etkileyen tüm ölçüleri sayısal olarak önünüze koyar.
+        </p>
+        <ul class="check-list">
+          <li data-i18n="featuresPage.f1.i1">Dış kontur ve iç kontur uzunlukları ayrı ayrı hesaplanır.</li>
+          <li data-i18n="featuresPage.f1.i2">Delik sayısı, delik çapları ve delme (piercing) adedi otomatik çıkarılır.</li>
+          <li data-i18n="featuresPage.f1.i3">Parçanın net alanı ve gabari (en × boy) ölçüsü belirlenir.</li>
+          <li data-i18n="featuresPage.f1.i4">Kapalı olmayan konturlar ve çift çizilmiş çizgiler işaretlenir.</li>
+          <li data-i18n="featuresPage.f1.i5">Aynı projedeki tüm parçalar için ölçüm sonuçları tek listede toplanır.</li>
+        </ul>
+      </div>
+
+      <div class="feature-row__media">
+        <div class="panel">
+          <div class="panel__bar">
+            <span class="panel__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span data-i18n="featuresPage.f1.panel">Geometri analizi</span>
+          </div>
+          <div class="panel__body">
+            <div class="panel__grid">
+              <div class="metric">
+                <div class="metric__label" data-i18n="featuresPage.f1.m1">Dış kontur</div>
+                <div class="metric__value">1.148 <small>mm</small></div>
+              </div>
+              <div class="metric">
+                <div class="metric__label" data-i18n="featuresPage.f1.m2">İç kontur</div>
+                <div class="metric__value">694 <small>mm</small></div>
+              </div>
+              <div class="metric">
+                <div class="metric__label" data-i18n="featuresPage.f1.m3">Delik sayısı</div>
+                <div class="metric__value">4</div>
+              </div>
+              <div class="metric">
+                <div class="metric__label" data-i18n="featuresPage.f1.m4">Gabari</div>
+                <div class="metric__value">354 × 220 <small>mm</small></div>
+              </div>
+              <div class="metric">
+                <div class="metric__label" data-i18n="featuresPage.f1.m5">Net alan</div>
+                <div class="metric__value">0,067 <small>m²</small></div>
+              </div>
+              <div class="metric">
+                <div class="metric__label" data-i18n="featuresPage.f1.m6">Uyarı</div>
+                <div class="metric__value" style="font-size:1rem; color:var(--green-600);" data-i18n="featuresPage.f1.m6v">Temiz</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 — KESİM MALİYETİ -->
+    <section class="feature-row" id="kesim-maliyeti">
+      <div class="feature-row__body">
+        <span class="eyebrow" data-i18n="featuresPage.f2.eyebrow">02 — Kesim Maliyeti</span>
+        <h2 class="feature-row__title" data-i18n="features.cutcost.title">Kesim Maliyeti Hesaplama</h2>
+        <p class="feature-row__text" data-i18n="featuresPage.f2.text">
+          Kesim maliyeti yalnızca "makine kaç dakika çalıştı" sorusu değildir. Delme
+          süreleri, hızlanma-yavaşlama kayıpları, kullanılan gaz cinsi ve enerji tüketimi
+          birlikte hesaba girer. AdviseCAD bunları malzemeye ve kalınlığa göre ayrı ayrı
+          değerlendirir.
+        </p>
+        <ul class="check-list">
+          <li data-i18n="featuresPage.f2.i1">Malzeme cinsi ve kalınlığına göre kesim hızı tablosu kullanılır.</li>
+          <li data-i18n="featuresPage.f2.i2">Her delme için ayrı delme süresi ve gaz sarfiyatı eklenir.</li>
+          <li data-i18n="featuresPage.f2.i3">Makine saat ücreti, amortisman ve bakım payını içerecek şekilde tanımlanır.</li>
+          <li data-i18n="featuresPage.f2.i4">Oksijen, nitrojen veya basınçlı hava seçimine göre gaz gideri değişir.</li>
+          <li data-i18n="featuresPage.f2.i5">Enerji tüketimi kW cinsinden tanımlanır, güncel birim fiyatla çarpılır.</li>
+        </ul>
+      </div>
+
+      <div class="feature-row__media">
+        <div class="panel">
+          <div class="panel__bar">
+            <span class="panel__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span data-i18n="featuresPage.f2.panel">Kesim maliyeti — adet başına</span>
+          </div>
+          <div class="panel__body">
+            <div class="table-wrap" style="border:none;">
+              <table class="table" style="min-width:0;">
+                <tbody>
+                  <tr>
+                    <th scope="row" data-i18n="featuresPage.f2.r1">Kesim süresi</th>
+                    <td class="is-num">1 dk 12 sn</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-i18n="featuresPage.f2.r2">Delme süresi (4 adet)</th>
+                    <td class="is-num">6 sn</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-i18n="featuresPage.f2.r3">Makine saat ücreti</th>
+                    <td class="is-num">₺ 1.450 / saat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-i18n="featuresPage.f2.r4">Gaz gideri (nitrojen)</th>
+                    <td class="is-num">₺ 6,80</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-i18n="featuresPage.f2.r5">Enerji gideri</th>
+                    <td class="is-num">₺ 3,10</td>
+                  </tr>
+                  <tr style="background:var(--green-50);">
+                    <th scope="row" data-i18n="featuresPage.f2.r6">Kesim maliyeti</th>
+                    <td class="is-num" style="font-weight:600;color:var(--green-700);">₺ 41,25</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 — FİYATLANDIRMA -->
+    <section class="feature-row" id="fiyatlandirma">
+      <div class="feature-row__body">
+        <span class="eyebrow" data-i18n="featuresPage.f3.eyebrow">03 — Fiyatlandırma</span>
+        <h2 class="feature-row__title" data-i18n="features.pricing.title">Fiyatlandırma Hesaplama</h2>
+        <p class="feature-row__text" data-i18n="featuresPage.f3.text">
+          Maliyeti bilmek yetmez; ona ne ekleyeceğinizi de bilmeniz gerekir. AdviseCAD
+          maliyetin üzerine kâr marjını, adet kademesine bağlı iskontoyu ve vergiyi
+          uygulayarak müşteriye verilecek net fiyatı üretir. Marjın nerede eridiğini
+          görerek pazarlık edersiniz.
+        </p>
+        <ul class="check-list">
+          <li data-i18n="featuresPage.f3.i1">Kâr marjı yüzde veya sabit tutar olarak tanımlanabilir.</li>
+          <li data-i18n="featuresPage.f3.i2">Adet kademelerine göre otomatik iskonto uygulanır.</li>
+          <li data-i18n="featuresPage.f3.i3">Kurulum, kalıp veya nakliye gibi tek seferlik kalemler eklenir.</li>
+          <li data-i18n="featuresPage.f3.i4">KDV dahil ve hariç fiyat aynı ekranda görünür.</li>
+          <li data-i18n="featuresPage.f3.i5">Fiyat kırıldığında kalan kâr marjı anında güncellenir.</li>
+        </ul>
+      </div>
+
+      <div class="feature-row__media">
+        <div class="panel">
+          <div class="panel__bar">
+            <span class="panel__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span data-i18n="featuresPage.f3.panel">Fiyat oluşumu — 25 adet</span>
+          </div>
+          <div class="panel__body">
+            <div class="table-wrap" style="border:none;">
+              <table class="table" style="min-width:0;">
+                <tbody>
+                  <tr>
+                    <th scope="row" data-i18n="featuresPage.f3.r1">Toplam üretim maliyeti</th>
+                    <td class="is-num">₺ 168,40</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-i18n="featuresPage.f3.r2">Kâr marjı (%32)</th>
+                    <td class="is-num">₺ 53,89</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-i18n="featuresPage.f3.r3">Adet iskontosu (−%3)</th>
+                    <td class="is-num" style="color:var(--danger);">− ₺ 7,69</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-i18n="featuresPage.f3.r4">Birim fiyat (KDV hariç)</th>
+                    <td class="is-num">₺ 214,60</td>
+                  </tr>
+                  <tr style="background:var(--green-50);">
+                    <th scope="row" data-i18n="featuresPage.f3.r5">Toplam teklif (25 adet)</th>
+                    <td class="is-num" style="font-weight:600;color:var(--green-700);">₺ 5.365,00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 — MALZEME VE ÜRETİM MALİYETİ -->
+    <section class="feature-row" id="malzeme">
+      <div class="feature-row__body">
+        <span class="eyebrow" data-i18n="featuresPage.f4.eyebrow">04 — Malzeme ve Üretim</span>
+        <h2 class="feature-row__title" data-i18n="features.material.title">Malzeme ve Üretim Maliyeti Analizi</h2>
+        <p class="feature-row__text" data-i18n="featuresPage.f4.text">
+          Bir lazer kesim işinde maliyetin en büyük kalemi çoğu zaman sacın kendisidir.
+          Ama ödediğiniz sacın tamamı parçaya dönüşmez. AdviseCAD parçanın kapladığı
+          gerçek alanı, plakadaki yerleşim verimliliğini ve fire oranını hesaba katarak
+          malzemenin gerçek maliyetini gösterir.
+        </p>
+        <ul class="check-list">
+          <li data-i18n="featuresPage.f4.i1">Sac plaka fiyatı kilogram veya metrekare bazında tanımlanır.</li>
+          <li data-i18n="featuresPage.f4.i2">Parçanın plaka üzerinde kapladığı alan ve yerleşim verimliliği hesaplanır.</li>
+          <li data-i18n="featuresPage.f4.i3">Fire ve hurda oranı maliyete yansıtılır, tahmine bırakılmaz.</li>
+          <li data-i18n="featuresPage.f4.i4">Farklı kalınlık ve malzeme alternatifleri karşılaştırılabilir.</li>
+          <li data-i18n="featuresPage.f4.i5">Malzeme, kesim, gaz ve işçilik payları ayrı ayrı raporlanır.</li>
+        </ul>
+      </div>
+
+      <div class="feature-row__media">
+        <div class="panel">
+          <div class="panel__bar">
+            <span class="panel__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span data-i18n="featuresPage.f4.panel">Maliyet kırılımı</span>
+          </div>
+          <div class="panel__body">
+            <div class="panel__grid" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr));">
+              <div class="metric">
+                <div class="metric__label" data-i18n="featuresPage.f4.m1">Plaka fiyatı</div>
+                <div class="metric__value">₺ 1.980 <small>/ plaka</small></div>
+              </div>
+              <div class="metric">
+                <div class="metric__label" data-i18n="featuresPage.f4.m2">Yerleşim verimliliği</div>
+                <div class="metric__value">%91,6</div>
+              </div>
+              <div class="metric">
+                <div class="metric__label" data-i18n="featuresPage.f4.m3">Fire oranı</div>
+                <div class="metric__value">%8,4</div>
+              </div>
+            </div>
+
+            <div class="breakdown">
+              <div class="breakdown__bar" role="img" aria-label="Maliyet kırılımı: malzeme %54, kesim %27, gaz ve enerji %11, işçilik %8">
+                <span class="breakdown__seg breakdown__seg--material" style="width:54%"></span>
+                <span class="breakdown__seg breakdown__seg--cutting" style="width:27%"></span>
+                <span class="breakdown__seg breakdown__seg--gas" style="width:11%"></span>
+                <span class="breakdown__seg breakdown__seg--labor" style="width:8%"></span>
+              </div>
+              <ul class="breakdown__legend">
+                <li><i style="background:var(--green-700)"></i><span data-i18n="home.sample.legMaterial">Malzeme %54</span></li>
+                <li><i style="background:var(--green-500)"></i><span data-i18n="home.sample.legCutting">Kesim (makine) %27</span></li>
+                <li><i style="background:var(--green-300)"></i><span data-i18n="home.sample.legGas">Gaz ve enerji %11</span></li>
+                <li><i style="background:var(--green-100)"></i><span data-i18n="home.sample.legLabor">İşçilik %8</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 — SÜREÇ YÖNETİMİ -->
+    <section class="feature-row" id="surec">
+      <div class="feature-row__body">
+        <span class="eyebrow" data-i18n="featuresPage.f5.eyebrow">05 — Süreç Yönetimi</span>
+        <h2 class="feature-row__title" data-i18n="features.process.title">Üretim Süreci Yönetimi</h2>
+        <p class="feature-row__text" data-i18n="featuresPage.f5.text">
+          Tek bir parçayı hesaplamak kolaydır; asıl mesele onlarca parçalık bir işi
+          düzenli tutmaktır. AdviseCAD projeleri, teklifleri ve müşteri geçmişini bir arada
+          saklar. Altı ay önce verdiğiniz fiyata bakmak için kimsenin bilgisayarını
+          karıştırmanız gerekmez.
+        </p>
+        <ul class="check-list">
+          <li data-i18n="featuresPage.f5.i1">Çok parçalı projeler tek seferde hesaplanır ve tek teklifte toplanır.</li>
+          <li data-i18n="featuresPage.f5.i2">Teklif geçmişi müşteri ve tarih bazında saklanır.</li>
+          <li data-i18n="featuresPage.f5.i3">Sık kullanılan malzeme ve makine ayarları şablon olarak kaydedilir.</li>
+          <li data-i18n="featuresPage.f5.i4">Teklifler PDF, Excel veya yazdırılabilir rapor olarak dışa aktarılır.</li>
+          <li data-i18n="featuresPage.f5.i5">Malzeme fiyatı değiştiğinde eski teklifler yeni fiyatla güncellenebilir.</li>
+        </ul>
+      </div>
+
+      <div class="feature-row__media">
+        <div class="panel">
+          <div class="panel__bar">
+            <span class="panel__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span data-i18n="featuresPage.f5.panel">Son teklifler</span>
+          </div>
+          <div class="panel__body" style="padding:0;">
+            <div class="table-wrap" style="border:none;border-radius:0;">
+              <table class="table" style="min-width:420px;">
+                <thead>
+                  <tr>
+                    <th data-i18n="featuresPage.f5.c1">Proje</th>
+                    <th data-i18n="featuresPage.f5.c2">Adet</th>
+                    <th data-i18n="featuresPage.f5.c3">Tutar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Bağlantı Sacı</th><td class="is-num">25</td><td class="is-num">₺ 5.365,00</td></tr>
+                  <tr><th scope="row">Flanş Kapağı</th><td class="is-num">120</td><td class="is-num">₺ 18.240,00</td></tr>
+                  <tr><th scope="row">Panel Ön Yüz</th><td class="is-num">8</td><td class="is-num">₺ 3.112,00</td></tr>
+                  <tr><th scope="row">Konsol Ayağı</th><td class="is-num">60</td><td class="is-num">₺ 9.480,00</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ==================== KARŞILAŞTIRMA TABLOSU ==================== -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <span class="eyebrow" data-i18n="featuresPage.table.eyebrow">Karşılaştırma</span>
+        <h2 data-i18n="featuresPage.table.title">Manuel yöntem ile AdviseCAD arasındaki fark</h2>
+      </div>
+
+      <div class="table-wrap reveal">
+        <table class="table">
+          <caption class="visually-hidden" data-i18n="featuresPage.table.caption">
+            Manuel teklif hazırlama yöntemi ile AdviseCAD kullanımının karşılaştırması
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="featuresPage.table.c1">Adım</th>
+              <th scope="col" data-i18n="featuresPage.table.c2">Elle / Excel ile</th>
+              <th scope="col" data-i18n="featuresPage.table.c3">AdviseCAD ile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" data-i18n="featuresPage.table.r1">Kesim uzunluğu tespiti</th>
+              <td data-i18n="featuresPage.table.r1a">Çizim üzerinden gözle ölçüm, yaklaşık değer</td>
+              <td data-i18n="featuresPage.table.r1b">Dosyadan otomatik, milimetre hassasiyetinde</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="featuresPage.table.r2">Delme sayısı</th>
+              <td data-i18n="featuresPage.table.r2a">Elle sayılır, atlanabilir</td>
+              <td data-i18n="featuresPage.table.r2b">Geometriden otomatik çıkarılır</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="featuresPage.table.r3">Fire ve yerleşim</th>
+              <td data-i18n="featuresPage.table.r3a">Sabit bir yüzde eklenir</td>
+              <td data-i18n="featuresPage.table.r3b">Parçaya ve plakaya göre hesaplanır</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="featuresPage.table.r4">Fiyat güncellemesi</th>
+              <td data-i18n="featuresPage.table.r4a">Her tabloda ayrı ayrı düzeltilir</td>
+              <td data-i18n="featuresPage.table.r4b">Tek yerden, tüm hesaplara yansır</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="featuresPage.table.r5">Teklif geçmişi</th>
+              <td data-i18n="featuresPage.table.r5a">Dağınık dosyalar, kişiye bağlı</td>
+              <td data-i18n="featuresPage.table.r5b">Kayıtlı, aranabilir, tekrar kullanılabilir</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="featuresPage.table.r6">Sonuç tutarlılığı</th>
+              <td data-i18n="featuresPage.table.r6a">Hesaplayan kişiye göre değişir</td>
+              <td data-i18n="featuresPage.table.r6b">Aynı parça, her zaman aynı maliyet</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== KAPANIŞ ÇAĞRISI ==================== -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div>
+        <h2 data-i18n="cta.title">Bir sonraki teklifinizi AdviseCAD ile hazırlayın</h2>
+        <p data-i18n="cta.text">
+          Uygulamayı indirin, kendi dosyanızla deneyin. Sonucu bugün kullandığınız
+          yöntemle karşılaştırmak beş dakikanızı alacak.
+        </p>
+      </div>
+      <div class="cta-band__actions">
+        <a class="btn btn--light btn--lg" href="indir.html" data-i18n="common.downloadApp">Uygulamayı İndir</a>
+        <a class="btn btn--ghost-light btn--lg" href="iletisim.html" data-i18n="common.contactUs">Bize ulaşın</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <a class="logo logo--footer" href="index.html">
+          <img class="logo__img" src="assets/logo-light.png" alt="AdviseCAD" width="668" height="176">
+        </a>
+        <p data-i18n="footer.about">
+          2 boyutlu CNC lazer kesim süreçleri için ölçüm, maliyet analizi ve
+          fiyatlandırma yazılımı. Teklif masanızdaki tahmini hesapla değiştirir.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="footer__title" data-i18n="footer.product">Ürün</h2>
+        <ul class="footer__links">
+          <li><a href="ozellikler.html" data-i18n="nav.features">Özellikler</a></li>
+          <li><a href="nasil-calisir.html" data-i18n="nav.how">Nasıl Çalışır?</a></li>
+          <li><a href="fiyatlandirma.html" data-i18n="nav.pricing">Fiyatlandırma</a></li>
+          <li><a href="indir.html" data-i18n="common.downloadApp">Uygulamayı İndir</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer__title" data-i18n="footer.company">Kurumsal</h2>
+        <ul class="footer__links">
+          <li><a href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a></li>
+          <li><a href="iletisim.html" data-i18n="nav.contact">İletişim</a></li>
+          <li><a href="fiyatlandirma.html#sss" data-i18n="footer.faq">Sık Sorulanlar</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer__title" data-i18n="footer.contact">İletişim</h2>
+        <ul class="footer__links">
+          <li><a href="mailto:info@advisecad.com">info@advisecad.com</a></li>
+          <li><a href="tel:+900000000000">+90 (000) 000 00 00</a></li>
+          <li><span data-i18n="footer.hours">Hafta içi 09:00 – 18:00</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>© <span class="num">2026</span> AdviseCAD. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span></p>
+      <ul class="footer__legal">
+        <li><a href="iletisim.html" data-i18n="footer.privacy">Gizlilik</a></li>
+        <li><a href="iletisim.html" data-i18n="footer.terms">Kullanım Koşulları</a></li>
+        <li><a href="iletisim.html" data-i18n="footer.kvkk">KVKK</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,633 @@
+/* ==========================================================================
+   AdviseCAD — Bileşenler
+   Buton, rozet, kart, tablo, form, akordiyon ve istatistik öğeleri.
+   ========================================================================== */
+
+/* ==========================================================================
+   BUTONLAR
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: 0.8rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--r-md);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--t-fast), border-color var(--t-fast),
+    color var(--t-fast), transform var(--t-fast), box-shadow var(--t-base);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn__icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+/* Birincil — marka yeşili */
+.btn--primary {
+  background: var(--green-700);
+  color: var(--white);
+  box-shadow: var(--shadow-green);
+}
+
+.btn--primary:hover {
+  background: var(--green-600);
+  color: var(--white);
+  box-shadow: 0 16px 34px rgba(3, 70, 66, 0.26);
+}
+
+/* İkincil — çerçeveli */
+.btn--secondary {
+  background: var(--white);
+  border-color: var(--line-strong);
+  color: var(--ink-900);
+}
+
+.btn--secondary:hover {
+  border-color: var(--green-500);
+  color: var(--green-700);
+  background: var(--green-50);
+}
+
+/* Koyu zemin üzerinde */
+.btn--light {
+  background: var(--white);
+  color: var(--green-900);
+}
+
+.btn--light:hover {
+  background: var(--green-50);
+  color: var(--green-900);
+}
+
+.btn--ghost-light {
+  background: transparent;
+  border-color: var(--border-on-dark);
+  color: var(--white);
+}
+
+.btn--ghost-light:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--green-200);
+  color: var(--white);
+}
+
+/* Boyutlar */
+.btn--lg {
+  padding: 1rem 1.9rem;
+  font-size: 1rem;
+}
+
+.btn--sm {
+  padding: 0.55rem 1rem;
+  font-size: var(--fs-xs);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* Metin bağlantısı — ok işaretli */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--green-600);
+  text-decoration: none;
+}
+
+.link-arrow svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--t-base);
+}
+
+.link-arrow:hover svg {
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .link-arrow svg {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .link-arrow:hover svg {
+  transform: scaleX(-1) translateX(4px);
+}
+
+/* ==========================================================================
+   ROZETLER
+   ========================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--r-pill);
+  background: var(--green-100);
+  color: var(--green-800);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.badge--dark {
+  background: rgba(150, 218, 210, 0.12);
+  border: 1px solid var(--border-on-dark);
+  color: var(--green-200);
+}
+
+.badge--accent {
+  background: var(--accent-soft);
+  color: var(--green-800);
+}
+
+/* Koyu zemin üzerinde okunabilir kalması için açık metin */
+.section--dark .badge--accent,
+.plan--featured .badge--accent,
+.hero .badge--accent {
+  background: var(--accent-soft);
+  border: 1px solid rgba(168, 230, 58, 0.3);
+  color: var(--accent);
+}
+
+.badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green-500);
+  flex: none;
+}
+
+.badge--dark .badge__dot {
+  background: var(--accent);
+}
+
+/* ==========================================================================
+   KARTLAR
+   ========================================================================== */
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-6);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  transition: transform var(--t-base), box-shadow var(--t-base),
+    border-color var(--t-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--green-200);
+  box-shadow: var(--shadow-lg);
+}
+
+.card__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--sp-5);
+  border-radius: var(--r-md);
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  color: var(--green-700);
+  flex: none;
+}
+
+.card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.card__title {
+  margin-bottom: var(--sp-3);
+  font-size: var(--fs-h4);
+}
+
+.card__text {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+}
+
+.card__footer {
+  margin-top: auto;
+  padding-top: var(--sp-5);
+}
+
+/* Koyu zemin üzerindeki kart */
+.card--dark {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--border-on-dark);
+}
+
+.card--dark:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--green-300);
+  box-shadow: none;
+}
+
+.card--dark .card__icon {
+  background: rgba(168, 230, 58, 0.1);
+  border-color: rgba(168, 230, 58, 0.2);
+  color: var(--accent);
+}
+
+.card--dark .card__title {
+  color: var(--white);
+}
+
+.card--dark .card__text {
+  color: var(--text-on-dark-muted);
+}
+
+/* ==========================================================================
+   İŞARET LİSTESİ (tik işaretli)
+   ========================================================================== */
+.check-list {
+  display: grid;
+  gap: var(--sp-3);
+}
+
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.check-list li::before {
+  content: "";
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: var(--green-50) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23034642' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E")
+    center / 12px no-repeat;
+  border: 1px solid var(--green-100);
+}
+
+.check-list--dark li {
+  color: var(--text-on-dark-muted);
+}
+
+.check-list--dark li::before {
+  background-color: rgba(168, 230, 58, 0.12);
+  border-color: rgba(168, 230, 58, 0.24);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a8e63a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+}
+
+/* ==========================================================================
+   İSTATİSTİKLER
+   ========================================================================== */
+.stat {
+  padding: var(--sp-5) var(--sp-4);
+}
+
+.stat__value {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--green-700);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat__value sup {
+  font-size: 0.5em;
+  vertical-align: super;
+}
+
+.stat__label {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.stat--dark .stat__value {
+  color: var(--accent);
+}
+
+.stat--dark .stat__label {
+  color: var(--text-on-dark-muted);
+}
+
+/* ==========================================================================
+   TABLOLAR
+   ========================================================================== */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--white);
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  min-width: 640px;
+  font-size: var(--fs-sm);
+}
+
+.table th,
+.table td {
+  padding: var(--sp-4) var(--sp-5);
+  text-align: start;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.table thead th {
+  background: var(--green-50);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--green-800);
+  white-space: nowrap;
+}
+
+.table tbody tr:last-child th,
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover td,
+.table tbody tr:hover th {
+  background: color-mix(in srgb, var(--green-50) 55%, transparent);
+}
+
+.table th[scope="row"] {
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.table td.is-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Tabloda evet/hayır göstergesi */
+.tick,
+.cross {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+.tick {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+.cross {
+  background: var(--green-50);
+  color: var(--ink-300);
+}
+
+.tick svg,
+.cross svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* ==========================================================================
+   AKORDİYON — <details>/<summary> ile, JavaScript gerekmez
+   ========================================================================== */
+.accordion {
+  display: grid;
+  gap: var(--sp-3);
+}
+
+.accordion__item {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--white);
+  overflow: hidden;
+  transition: border-color var(--t-base), box-shadow var(--t-base);
+}
+
+.accordion__item[open] {
+  border-color: var(--green-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.accordion__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-5);
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--ink-900);
+  cursor: pointer;
+  list-style: none;
+  transition: background var(--t-fast);
+}
+
+.accordion__head::-webkit-details-marker {
+  display: none;
+}
+
+.accordion__head:hover {
+  background: var(--green-50);
+}
+
+.accordion__head::after {
+  content: "";
+  flex: none;
+  width: 20px;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23034642' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  transition: transform var(--t-base);
+}
+
+.accordion__item[open] .accordion__head::after {
+  transform: rotate(180deg);
+}
+
+.accordion__body {
+  padding: 0 var(--sp-5) var(--sp-5);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+}
+
+.accordion__body > * + * {
+  margin-top: var(--sp-3);
+}
+
+/* ==========================================================================
+   FORMLAR
+   ========================================================================== */
+.form {
+  display: grid;
+  gap: var(--sp-5);
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-5);
+}
+
+.field {
+  display: grid;
+  gap: var(--sp-2);
+}
+
+.field__label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--ink-700);
+}
+
+.field__label .req {
+  color: var(--danger);
+  margin-inline-start: 2px;
+}
+
+.field__hint {
+  font-size: var(--fs-xs);
+  color: var(--ink-400);
+}
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  padding: 0.75rem 0.95rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  background: var(--white);
+  font-size: var(--fs-sm);
+  color: var(--ink-900);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--ink-300);
+}
+
+.input:hover,
+.textarea:hover,
+.select:hover {
+  border-color: var(--ink-300);
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--green-500);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--green-500) 18%, transparent);
+}
+
+.textarea {
+  min-height: 148px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.select {
+  appearance: none;
+  padding-inline-end: 2.4rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b6675' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 18px;
+}
+
+[dir="rtl"] .select {
+  background-position: left 0.85rem center;
+}
+
+/* Girilen değer geçersizse (tarayıcı doğrulaması) kırmızı kenarlık */
+.input:user-invalid,
+.textarea:user-invalid {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--danger) 12%, transparent);
+}
+
+/* Onay kutusu */
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  font-size: var(--fs-xs);
+  line-height: 1.6;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.checkbox input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--green-700);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   BİLGİ KUTUSU
+   ========================================================================== */
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  border: 1px solid var(--green-100);
+  border-inline-start: 3px solid var(--green-500);
+  border-radius: var(--r-md);
+  background: var(--green-50);
+  font-size: var(--fs-xs);
+  line-height: 1.65;
+  color: var(--ink-700);
+}
+
+.note svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  color: var(--green-600);
+}
+
+.note--dark {
+  background: rgba(168, 230, 58, 0.06);
+  border-color: var(--border-on-dark);
+  border-inline-start-color: var(--accent);
+  color: var(--text-on-dark-muted);
+}
+
+.note--dark svg {
+  color: var(--accent);
+}

@@ -1,0 +1,462 @@
+/* ==========================================================================
+   AdviseCAD — Hero ve Lazer Kesim Görselleştirmesi
+   Sitenin imza öğesi: kesim yolunun ilerleyerek çizildiği, ardından ölçü
+   açıklamalarının belirdiği saf SVG + CSS animasyonu. JavaScript kullanmaz.
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--green-950);
+  color: var(--text-on-dark);
+  padding-block: clamp(3rem, 1.5rem + 6vw, 6rem) clamp(3.5rem, 2rem + 6vw, 6.5rem);
+}
+
+/* Teknik çizim hissi veren ızgara zemin */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      color-mix(in srgb, var(--green-300) 7%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--green-300) 7%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 46px 46px;
+  mask-image: radial-gradient(ellipse 90% 75% at 60% 35%, #000 25%, transparent 78%);
+  pointer-events: none;
+}
+
+/* Sağ üstte yumuşak yeşil ışık */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: -10%;
+  top: -35%;
+  width: 780px;
+  height: 780px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--green-500) 26%, transparent) 0%,
+    transparent 62%
+  );
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: var(--z-base);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
+  align-items: center;
+  gap: clamp(2.5rem, 1rem + 5vw, 5rem);
+}
+
+@media (max-width: 980px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+}
+
+/* ---------- Hero metni ---------- */
+/* min-width:0 — grid hücresinin uzun kelimelerle taşmasını engeller */
+.hero__text {
+  min-width: 0;
+}
+
+.hero__title {
+  margin-top: var(--sp-5);
+  font-size: var(--fs-display);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.035em;
+  color: var(--white);
+}
+
+.hero__title em {
+  font-style: normal;
+  position: relative;
+  color: var(--green-200);
+  white-space: nowrap;
+}
+
+/* Vurgulanan kelimenin altındaki lazer izi */
+.hero__title em::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0.06em;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transform-origin: inline-start;
+  animation: underline-sweep 1.1s var(--ease-out) 0.5s both;
+}
+
+@keyframes underline-sweep {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hero__lead {
+  max-width: 54ch;
+  margin-top: var(--sp-5);
+  font-size: var(--fs-lead);
+  line-height: 1.65;
+  color: var(--text-on-dark-muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-top: var(--sp-7);
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3) var(--sp-6);
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--border-on-dark);
+  font-size: var(--fs-xs);
+  color: var(--text-on-dark-muted);
+}
+
+.hero__meta li {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.hero__meta svg {
+  width: 15px;
+  height: 15px;
+  color: var(--green-300);
+  flex: none;
+}
+
+/* ==========================================================================
+   GÖRSEL ALAN
+   ========================================================================== */
+.hero__visual {
+  position: relative;
+}
+
+.cutviz {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.45));
+}
+
+/* Sac plaka gövdesi */
+.cutviz__plate {
+  fill: #062a26;
+  stroke: rgba(150, 218, 210, 0.22);
+  stroke-width: 1.5;
+}
+
+.cutviz__grid {
+  stroke: rgba(150, 218, 210, 0.12);
+  stroke-width: 1;
+}
+
+/* Kesilecek konturun soluk ön izlemesi */
+.cutviz__ghost {
+  fill: rgba(150, 218, 210, 0.05);
+  stroke: rgba(150, 218, 210, 0.28);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+}
+
+/* Tamamlanan kesim izi — yol boyunca ilerleyerek çizilir */
+.cutviz__cut {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  filter: drop-shadow(0 0 5px rgba(168, 230, 58, 0.85));
+}
+
+/* Kesim ucundaki parlak nokta */
+.cutviz__spark {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 0.012 0.988;
+  stroke-dashoffset: 1;
+  filter: drop-shadow(0 0 9px rgba(168, 230, 58, 1));
+  opacity: 0;
+}
+
+/* Ölçü açıklamaları — başlangıçta gizli, kesim bittikten sonra belirir.
+   Bu kural, aşağıdaki medya sorgularından ÖNCE gelmelidir; aksi hâlde
+   hareket azaltma modundaki "opacity: 1" değerini ezerdi. */
+.cutviz__dim {
+  opacity: 0;
+}
+
+.cutviz__dim-line {
+  stroke: var(--green-300);
+  stroke-width: 1.2;
+}
+
+.cutviz__dim-text {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--green-200);
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Animasyon zaman çizelgesi ----------
+   0.0 sn  dış kontur kesilir      (3.2 sn)
+   3.2 sn  delikler kesilir        (1.4 sn)
+   4.4 sn  ölçü açıklamaları belirir
+   Tümü 9 sn'lik bir döngüde tekrarlar. */
+@media (prefers-reduced-motion: no-preference) {
+  .cutviz__cut--outline {
+    animation: cut-draw 9s var(--ease-in-out) infinite;
+  }
+
+  .cutviz__spark--outline {
+    animation: spark-run 9s var(--ease-in-out) infinite,
+      spark-fade 9s linear infinite;
+  }
+
+  .cutviz__cut--hole {
+    animation: cut-hole 9s var(--ease-out) infinite;
+  }
+
+  .cutviz__cut--hole-2 {
+    animation-delay: 0.18s;
+  }
+
+  .cutviz__cut--hole-3 {
+    animation-delay: 0.36s;
+  }
+
+  .cutviz__cut--slot {
+    animation-delay: 0.54s;
+  }
+
+  .cutviz__dim {
+    animation: dim-in 9s var(--ease-out) infinite;
+  }
+
+  .cutviz__dim--1 {
+    animation-delay: 0s;
+  }
+
+  .cutviz__dim--2 {
+    animation-delay: 0.16s;
+  }
+
+  .cutviz__dim--3 {
+    animation-delay: 0.32s;
+  }
+}
+
+/* Hareket azaltma açıkken: her şey tamamlanmış hâlde, sabit durur */
+@media (prefers-reduced-motion: reduce) {
+  .cutviz__cut,
+  .cutviz__cut--hole {
+    stroke-dashoffset: 0;
+  }
+
+  .cutviz__spark {
+    opacity: 0;
+  }
+
+  .cutviz__dim {
+    opacity: 1;
+  }
+}
+
+@keyframes cut-draw {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  36% {
+    stroke-dashoffset: 0;
+  }
+  88% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  97%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes cut-hole {
+  0%,
+  36% {
+    stroke-dashoffset: 1;
+  }
+  50%,
+  88% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  97%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes spark-run {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  36%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes spark-fade {
+  0%,
+  35% {
+    opacity: 1;
+  }
+  37%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dim-in {
+  0%,
+  50% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  58%,
+  88% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  95%,
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   GÖRSELİN ÜZERİNDEKİ ANALİZ KARTI
+   Statik örnek çıktı — ileride JavaScript ile canlı hesaplayıcıya bağlanacak.
+   ========================================================================== */
+.hero__card {
+  position: absolute;
+  inset-inline-end: -5%;
+  bottom: -9%;
+  width: min(272px, 74%);
+  padding: var(--sp-5);
+  border-radius: var(--r-lg);
+  background: rgba(3, 26, 24, 0.92);
+  border: 1px solid var(--border-on-dark);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-xl);
+  animation: card-in 0.8s var(--ease-out) 0.9s both;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__card {
+    position: static;
+    width: 100%;
+    margin-top: var(--sp-5);
+  }
+}
+
+.hero__card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding-bottom: var(--sp-4);
+  margin-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--border-on-dark);
+}
+
+.hero__card-title {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--green-200);
+}
+
+.data-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  font-size: var(--fs-xs);
+}
+
+.data-row + .data-row {
+  margin-top: var(--sp-3);
+}
+
+.data-row__key {
+  color: var(--text-on-dark-muted);
+}
+
+.data-row__val {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.data-row--total {
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border-on-dark);
+  font-size: var(--fs-sm);
+}
+
+.data-row--total .data-row__key {
+  font-weight: 600;
+  color: var(--white);
+}
+
+.data-row--total .data-row__val {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent);
+}

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AdviseCAD — 2B CNC Lazer Kesim İçin Maliyet ve Teklif Yazılımı</title>
+<meta name="description" content="AdviseCAD, 2 boyutlu CNC lazer kesim süreçleri için geliştirilmiş bir yazılımdır. DXF/DWG dosyalarınızı ölçer, kesim ve malzeme maliyetini hesaplar, satışa hazır fiyat çıkarır.">
+<link rel="canonical" href="https://www.advisecad.com/index.html">
+<meta name="theme-color" content="#034642">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AdviseCAD">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="AdviseCAD — 2B CNC Lazer Kesim İçin Maliyet ve Teklif Yazılımı">
+<meta property="og:description" content="Dosyayı yükleyin, ölçüm ve maliyet otomatik çıksın. Lazer kesim teklifinizi dakikalar içinde hazırlayın.">
+<meta property="og:url" content="https://www.advisecad.com/">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/blocks.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AdviseCAD",
+  "applicationCategory": "DesignApplication",
+  "applicationSubCategory": "CAD / CAM maliyet ve teklif yazılımı",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "2 boyutlu CNC lazer kesim süreçleri için ölçüm, kesim maliyeti, malzeme maliyeti ve fiyatlandırma yazılımı.",
+  "inLanguage": "tr-TR",
+  "offers": { "@type": "Offer", "availability": "https://schema.org/InStock" }
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="common.skipToContent">İçeriğe atla</a>
+
+<!-- ======================================================================
+     ÜST MENÜ  (aynı işaretleme tüm sayfalarda tekrarlanır)
+     ====================================================================== -->
+<header class="header">
+  <div class="container header__inner">
+
+    <a class="logo" href="index.html">
+      <img class="logo__img" src="assets/logo.png" alt="AdviseCAD" width="668" height="176">
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menüyü aç veya kapat">
+    <span class="nav-toggle__button" aria-hidden="true"><span class="nav-toggle__bars"></span></span>
+
+    <nav class="nav" aria-label="Ana menü">
+      <div class="nav__inner">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" aria-current="page" data-i18n="nav.home">Ana Sayfa</a></li>
+          <li><a class="nav__link" href="ozellikler.html" data-i18n="nav.features">Özellikler</a></li>
+          <li><a class="nav__link" href="nasil-calisir.html" data-i18n="nav.how">Nasıl Çalışır?</a></li>
+          <li><a class="nav__link" href="fiyatlandirma.html" data-i18n="nav.pricing">Fiyatlandırma</a></li>
+          <li><a class="nav__link" href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a></li>
+          <li><a class="nav__link" href="iletisim.html" data-i18n="nav.contact">İletişim</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="header__actions">
+      <div class="header__actions-inner">
+        <a class="btn btn--primary" href="indir.html">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="common.downloadApp">Uygulamayı İndir</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ====================================================================
+       HERO
+       ==================================================================== -->
+  <section class="hero">
+    <div class="container hero__inner">
+
+      <div class="hero__text">
+        <span class="badge badge--dark">
+          <span class="badge__dot"></span>
+          <span data-i18n="home.hero.badge">2B CNC lazer kesim için geliştirildi</span>
+        </span>
+
+        <h1 class="hero__title" data-i18n-html="home.hero.title">
+          Lazer kesim teklifinizi <em>dakikalar içinde</em> hazırlayın
+        </h1>
+
+        <p class="hero__lead" data-i18n="home.hero.lead">
+          AdviseCAD, 2 boyutlu CNC lazer kesim süreçleri için geliştirilmiş bir masaüstü
+          yazılımıdır. Teknik resminizi okur, parçayı ölçer, kesim ve malzeme maliyetini
+          hesaplar ve satışa hazır fiyatı önünüze koyar. Excel tablolarına, el yordamıyla
+          ölçmeye ve tahmine dayalı fiyat vermeye son.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="indir.html">
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="common.downloadApp">Uygulamayı İndir</span>
+          </a>
+          <a class="btn btn--ghost-light btn--lg" href="nasil-calisir.html" data-i18n="home.hero.ctaHow">Nasıl çalıştığını gör</a>
+        </div>
+
+        <ul class="hero__meta">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span data-i18n="home.hero.metaOs">Windows 10 / 11</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-i18n="home.hero.metaFormats">DXF · DWG desteği</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-i18n="home.hero.metaSetup">Kurulum 2 dakika</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Lazer kesim görselleştirmesi — saf SVG + CSS, JavaScript yok -->
+      <div class="hero__visual">
+        <svg class="cutviz" viewBox="0 0 560 460" role="img"
+             aria-label="Bir sac plaka üzerinde parçanın kesilmesi ve ölçülerinin otomatik çıkarılması canlandırması">
+          <defs>
+            <pattern id="cutgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path class="cutviz__grid" d="M40 0H0v40" fill="none"/>
+            </pattern>
+          </defs>
+
+          <!-- Sac plaka -->
+          <rect class="cutviz__plate" x="30" y="50" width="500" height="360" rx="10"/>
+          <rect x="30" y="50" width="500" height="360" rx="10" fill="url(#cutgrid)"/>
+
+          <!-- Kesilecek konturun ön izlemesi -->
+          <path class="cutviz__ghost" d="M120 130h190a24 24 0 0 1 24 24v66h96a22 22 0 0 1 22 22v86a22 22 0 0 1-22 22H120a22 22 0 0 1-22-22V152a22 22 0 0 1 22-22z"/>
+
+          <!-- Dış kontur kesimi -->
+          <path class="cutviz__cut cutviz__cut--outline" pathLength="1"
+                d="M120 130h190a24 24 0 0 1 24 24v66h96a22 22 0 0 1 22 22v86a22 22 0 0 1-22 22H120a22 22 0 0 1-22-22V152a22 22 0 0 1 22-22z"/>
+          <path class="cutviz__spark cutviz__spark--outline" pathLength="1"
+                d="M120 130h190a24 24 0 0 1 24 24v66h96a22 22 0 0 1 22 22v86a22 22 0 0 1-22 22H120a22 22 0 0 1-22-22V152a22 22 0 0 1 22-22z"/>
+
+          <!-- Delikler ve kanal -->
+          <path class="cutviz__cut cutviz__cut--hole" pathLength="1" d="M125 190a15 15 0 1 0 30 0a15 15 0 1 0-30 0"/>
+          <path class="cutviz__cut cutviz__cut--hole cutviz__cut--hole-2" pathLength="1" d="M125 300a15 15 0 1 0 30 0a15 15 0 1 0-30 0"/>
+          <path class="cutviz__cut cutviz__cut--hole cutviz__cut--hole-3" pathLength="1" d="M393 290a17 17 0 1 0 34 0a17 17 0 1 0-34 0"/>
+          <path class="cutviz__cut cutviz__cut--hole cutviz__cut--slot" pathLength="1" d="M218 270h74a18 18 0 0 1 0 36h-74a18 18 0 0 1 0-36z"/>
+
+          <!-- Otomatik çıkarılan ölçüler -->
+          <g class="cutviz__dim cutviz__dim--1">
+            <path class="cutviz__dim-line" d="M98 118V96M452 118V96M98 104h354" fill="none"/>
+            <text class="cutviz__dim-text" x="275" y="88" text-anchor="middle">354,0 mm</text>
+          </g>
+          <g class="cutviz__dim cutviz__dim--2">
+            <path class="cutviz__dim-line" d="M78 130h20M78 350h20M88 130v220" fill="none"/>
+            <text class="cutviz__dim-text" x="0" y="0" transform="translate(70 240) rotate(-90)" text-anchor="middle">220,0 mm</text>
+          </g>
+          <!-- Delik çapı açıklaması, sağdaki analiz kartının altında kalmasın diye
+               sol delikten aşağı doğru çıkarılır -->
+          <g class="cutviz__dim cutviz__dim--3">
+            <path class="cutviz__dim-line" d="M140 300 168 380h30" fill="none"/>
+            <text class="cutviz__dim-text" x="204" y="385">Ø 30,0</text>
+          </g>
+        </svg>
+
+        <!-- Örnek analiz çıktısı — statik gösterim -->
+        <div class="hero__card">
+          <div class="hero__card-head">
+            <span class="hero__card-title" data-i18n="home.hero.cardTitle">Analiz Özeti</span>
+            <span class="badge badge--accent" data-i18n="home.hero.cardTag">Örnek</span>
+          </div>
+          <div class="data-row">
+            <span class="data-row__key" data-i18n="home.hero.cardMaterial">Malzeme</span>
+            <span class="data-row__val">DKP 2,0 mm</span>
+          </div>
+          <div class="data-row">
+            <span class="data-row__key" data-i18n="home.hero.cardCutLength">Kesim uzunluğu</span>
+            <span class="data-row__val">1.842 mm</span>
+          </div>
+          <div class="data-row">
+            <span class="data-row__key" data-i18n="home.hero.cardPierce">Delme sayısı</span>
+            <span class="data-row__val">4</span>
+          </div>
+          <div class="data-row">
+            <span class="data-row__key" data-i18n="home.hero.cardScrap">Fire oranı</span>
+            <span class="data-row__val">%8,4</span>
+          </div>
+          <div class="data-row data-row--total">
+            <span class="data-row__key" data-i18n="home.hero.cardUnitPrice">Birim satış fiyatı</span>
+            <span class="data-row__val">₺ 214,60</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       İSTATİSTİK ŞERİDİ
+       ==================================================================== -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="stat-strip reveal">
+        <div class="stat">
+          <div class="stat__value">12<sup>+</sup></div>
+          <p class="stat__label" data-i18n="home.stats.s1">Tek hesapta değerlendirilen maliyet kalemi</p>
+        </div>
+        <div class="stat">
+          <div class="stat__value">4</div>
+          <p class="stat__label" data-i18n="home.stats.s2">Adımda dosyadan onaylı teklife</p>
+        </div>
+        <div class="stat">
+          <div class="stat__value">%100</div>
+          <p class="stat__label" data-i18n="home.stats.s3">Tekrarlanabilir, kişiye bağlı olmayan fiyatlandırma</p>
+        </div>
+        <div class="stat">
+          <div class="stat__value">0</div>
+          <p class="stat__label" data-i18n="home.stats.s4">Excel dosyası, kırık formül, kayıp teklif geçmişi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       PROBLEM / ÇÖZÜM
+       ==================================================================== -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <span class="eyebrow" data-i18n="home.problem.eyebrow">Neden AdviseCAD</span>
+        <h2 data-i18n="home.problem.title">Teklif hazırlamak, kesim yapmaktan uzun sürmemeli</h2>
+        <p class="lead" data-i18n="home.problem.lead">
+          Lazer kesim atölyelerinde en çok vakit kaybedilen yer makine başı değil, teklif
+          masasıdır. Aynı parça için iki farklı kişi iki farklı fiyat çıkarıyorsa sorun
+          fiyatta değil, yöntemdedir.
+        </p>
+      </div>
+
+      <div class="compare reveal-stagger">
+        <div class="compare__col compare__col--bad">
+          <span class="compare__tag" data-i18n="home.problem.badTag">Bugün</span>
+          <h3 data-i18n="home.problem.badTitle">Elle ölçüm, Excel ve tahmin</h3>
+          <ul class="compare__list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <span data-i18n="home.problem.bad1">Kesim uzunluğu ve delik sayısı teknik resim üzerinden gözle sayılıyor.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <span data-i18n="home.problem.bad2">Sac fiyatı, gaz ve enerji gideri yıllardır güncellenmemiş bir tabloda duruyor.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <span data-i18n="home.problem.bad3">Fire ve hurda payı "gözü kararak" ekleniyor; kâr marjı görünmüyor.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <span data-i18n="home.problem.bad4">Geçen ay aynı müşteriye hangi fiyatın verildiği kimsenin elinde yok.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <span data-i18n="home.problem.bad5">Düşük verilen fiyat işi zarara, yüksek verilen fiyat işi rakibe götürüyor.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="compare__col compare__col--good">
+          <span class="compare__tag" data-i18n="home.problem.goodTag">AdviseCAD ile</span>
+          <h3 data-i18n="home.problem.goodTitle">Ölçülen veri, hesaplanan maliyet</h3>
+          <ul class="compare__list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="home.problem.good1">Kesim uzunluğu, alan, delik ve delme sayısı dosyadan otomatik çıkarılır.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="home.problem.good2">Malzeme, gaz, enerji ve makine saat ücreti tek yerden güncellenir.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="home.problem.good3">Fire oranı ve yerleşim verimliliği hesabın içinde, tahminde değil.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="home.problem.good4">Her teklif kaydedilir; hangi parçaya ne fiyat verildiği kayıt altındadır.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="home.problem.good5">Kâr marjını görerek fiyat verirsiniz; iskonto payı baştan bellidir.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       ÖZELLİKLER
+       ==================================================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <span class="eyebrow" data-i18n="home.features.eyebrow">Özellikler</span>
+        <h2 data-i18n="home.features.title">Ölçümden fiyata, tek yazılımda</h2>
+        <p class="lead" data-i18n="home.features.lead">
+          AdviseCAD'in beş temel yeteneği, bir teklifin hazırlanma sürecini baştan sona kapsar.
+        </p>
+      </div>
+
+      <div class="grid grid--3 reveal-stagger">
+
+        <article class="card">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14.5 2.5 7 7L9 22l-7-7Z"/><path d="m9 6 1.5 1.5M12 9l1.5 1.5M6 9l1.5 1.5M9 12l1.5 1.5"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="features.measure.title">Ölçüm ve Analiz</h3>
+          <p class="card__text" data-i18n="features.measure.short">
+            DXF ve DWG dosyasını okur; dış kontur uzunluğunu, iç kesim uzunluğunu, parça
+            alanını, delik ve delme sayısını, gabari ölçülerini otomatik çıkarır.
+          </p>
+          <div class="card__footer">
+            <a class="link-arrow" href="ozellikler.html#olcum">
+              <span data-i18n="common.learnMore">Ayrıntılar</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v6M12 2 9 5M12 2l3 3"/><rect x="4" y="8" width="16" height="13" rx="2"/><path d="M8 13h8M8 17h5"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="features.cutcost.title">Kesim Maliyeti Hesaplama</h3>
+          <p class="card__text" data-i18n="features.cutcost.short">
+            Malzeme cinsi ve kalınlığına göre kesim hızını, delme süresini, makine saat
+            ücretini, gaz ve enerji sarfiyatını hesaba katar.
+          </p>
+          <div class="card__footer">
+            <a class="link-arrow" href="ozellikler.html#kesim-maliyeti">
+              <span data-i18n="common.learnMore">Ayrıntılar</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="features.pricing.title">Fiyatlandırma Hesaplama</h3>
+          <p class="card__text" data-i18n="features.pricing.short">
+            Maliyetin üzerine kâr marjını, adet kademesine göre iskontoyu ve vergiyi
+            uygular; müşteriye verilecek net birim fiyatı üretir.
+          </p>
+          <div class="card__footer">
+            <a class="link-arrow" href="ozellikler.html#fiyatlandirma">
+              <span data-i18n="common.learnMore">Ayrıntılar</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="features.material.title">Malzeme ve Üretim Maliyeti Analizi</h3>
+          <p class="card__text" data-i18n="features.material.short">
+            Sac plaka fiyatı, kullanılan alan, fire oranı ve yerleşim verimliliği üzerinden
+            gerçek malzeme maliyetini ortaya koyar.
+          </p>
+          <div class="card__footer">
+            <a class="link-arrow" href="ozellikler.html#malzeme">
+              <span data-i18n="common.learnMore">Ayrıntılar</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="features.process.title">Üretim Süreci Yönetimi</h3>
+          <p class="card__text" data-i18n="features.process.short">
+            Çok parçalı projeleri toplu işler, teklif geçmişini saklar, raporlar üretir ve
+            çıktıyı dışa aktarır. Aynı işi ikinci kez hesaplamazsınız.
+          </p>
+          <div class="card__footer">
+            <a class="link-arrow" href="ozellikler.html#surec">
+              <span data-i18n="common.learnMore">Ayrıntılar</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="card card--dark" style="background: var(--green-950); border-color: var(--green-700);">
+          <h3 class="card__title" data-i18n="home.features.ctaTitle">Hepsini çalışırken görün</h3>
+          <p class="card__text" data-i18n="home.features.ctaText">
+            Uygulamayı bilgisayarınıza kurun, kendi DXF dosyanızı yükleyin ve çıkan
+            maliyetle bugün elle hesapladığınızı karşılaştırın.
+          </p>
+          <div class="card__footer">
+            <a class="btn btn--light btn--block" href="indir.html" data-i18n="common.downloadApp">Uygulamayı İndir</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       ÖRNEK ANALİZ ÇIKTISI
+       ==================================================================== -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <span class="eyebrow" data-i18n="home.sample.eyebrow">Örnek çıktı</span>
+        <h2 data-i18n="home.sample.title">Bir parçanın maliyeti neye göre çıkıyor?</h2>
+        <p class="lead" data-i18n="home.sample.lead">
+          Aşağıda, 2 mm DKP sacdan 25 adet üretilecek bir bağlantı parçası için
+          AdviseCAD'in ürettiği özetin temsili bir örneği yer alıyor.
+        </p>
+      </div>
+
+      <div class="panel reveal">
+        <div class="panel__bar">
+          <span class="panel__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span data-i18n="home.sample.panelTitle">Proje: Bağlantı Sacı — DKP 2,0 mm — 25 adet</span>
+        </div>
+        <div class="panel__body">
+
+          <div class="panel__grid">
+            <div class="metric">
+              <div class="metric__label" data-i18n="home.sample.m1">Gabari ölçü</div>
+              <div class="metric__value">354 × 220 <small>mm</small></div>
+            </div>
+            <div class="metric">
+              <div class="metric__label" data-i18n="home.sample.m2">Toplam kesim uzunluğu</div>
+              <div class="metric__value">1.842 <small>mm</small></div>
+            </div>
+            <div class="metric">
+              <div class="metric__label" data-i18n="home.sample.m3">Delme sayısı</div>
+              <div class="metric__value">4</div>
+            </div>
+            <div class="metric">
+              <div class="metric__label" data-i18n="home.sample.m4">Parça net alanı</div>
+              <div class="metric__value">0,067 <small>m²</small></div>
+            </div>
+            <div class="metric">
+              <div class="metric__label" data-i18n="home.sample.m5">Kesim süresi (adet)</div>
+              <div class="metric__value">1:12 <small>dk</small></div>
+            </div>
+            <div class="metric">
+              <div class="metric__label" data-i18n="home.sample.m6">Yerleşim verimliliği</div>
+              <div class="metric__value">%91,6</div>
+            </div>
+          </div>
+
+          <div class="breakdown">
+            <h3 class="visually-hidden" data-i18n="home.sample.breakdownTitle">Maliyet kırılımı</h3>
+            <div class="breakdown__bar" role="img" aria-label="Maliyet kırılımı: malzeme %54, kesim %27, gaz ve enerji %11, işçilik %8">
+              <span class="breakdown__seg breakdown__seg--material" style="width:54%"></span>
+              <span class="breakdown__seg breakdown__seg--cutting" style="width:27%"></span>
+              <span class="breakdown__seg breakdown__seg--gas" style="width:11%"></span>
+              <span class="breakdown__seg breakdown__seg--labor" style="width:8%"></span>
+            </div>
+            <ul class="breakdown__legend">
+              <li><i style="background:var(--green-700)"></i><span data-i18n="home.sample.legMaterial">Malzeme %54</span></li>
+              <li><i style="background:var(--green-500)"></i><span data-i18n="home.sample.legCutting">Kesim (makine) %27</span></li>
+              <li><i style="background:var(--green-300)"></i><span data-i18n="home.sample.legGas">Gaz ve enerji %11</span></li>
+              <li><i style="background:var(--green-100)"></i><span data-i18n="home.sample.legLabor">İşçilik %8</span></li>
+            </ul>
+          </div>
+
+          <p class="note" style="margin-top: var(--sp-5);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <span data-i18n="home.sample.note">
+              Buradaki değerler tanıtım amaçlı temsili bir örnektir. Gerçek sonuçlar
+              kendi malzeme fiyatlarınıza, makine parametrelerinize ve işçilik
+              maliyetlerinize göre hesaplanır.
+            </span>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SÜREÇ
+       ==================================================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <span class="eyebrow" data-i18n="home.process.eyebrow">Nasıl çalışır</span>
+        <h2 data-i18n="home.process.title">Dört adımda dosyadan teklife</h2>
+      </div>
+
+      <div class="steps steps--connected reveal-stagger">
+        <article class="step">
+          <div class="step__num" aria-hidden="true"></div>
+          <h3 class="step__title" data-i18n="process.s1.title">Dosyayı yükleyin</h3>
+          <p class="step__text" data-i18n="process.s1.short">
+            Parçanın DXF veya DWG dosyasını sürükleyip bırakın. Çok parçalı bir iş için
+            tüm dosyaları tek projede toplayın.
+          </p>
+        </article>
+        <article class="step">
+          <div class="step__num" aria-hidden="true"></div>
+          <h3 class="step__title" data-i18n="process.s2.title">Ölçüm ve analiz</h3>
+          <p class="step__text" data-i18n="process.s2.short">
+            AdviseCAD konturları ayırır; kesim uzunluğu, delme sayısı, alan ve gabari
+            ölçüleri saniyeler içinde önünüze gelir.
+          </p>
+        </article>
+        <article class="step">
+          <div class="step__num" aria-hidden="true"></div>
+          <h3 class="step__title" data-i18n="process.s3.title">Maliyeti hesaplayın</h3>
+          <p class="step__text" data-i18n="process.s3.short">
+            Malzeme, kalınlık, adet ve makine bilgisini seçin; malzeme, kesim, gaz,
+            enerji ve işçilik kalemleri ayrı ayrı hesaplansın.
+          </p>
+        </article>
+        <article class="step">
+          <div class="step__num" aria-hidden="true"></div>
+          <h3 class="step__title" data-i18n="process.s4.title">Fiyatlandırın ve teklif verin</h3>
+          <p class="step__text" data-i18n="process.s4.short">
+            Kâr marjını ve iskontoyu belirleyin, net birim fiyatı görün, teklifi dışa
+            aktarıp müşteriye gönderin.
+          </p>
+        </article>
+      </div>
+
+      <div class="text-center" style="margin-top: var(--sp-8);">
+        <a class="btn btn--secondary btn--lg" href="nasil-calisir.html" data-i18n="home.process.cta">Süreci ayrıntılı incele</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       KİMLER İÇİN
+       ==================================================================== -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <span class="eyebrow" data-i18n="home.who.eyebrow">Kimler kullanır</span>
+        <h2 data-i18n="home.who.title">Sac metal işleyen herkesin teklif masası için</h2>
+      </div>
+
+      <div class="grid grid--4 reveal-stagger">
+        <article class="card card--dark">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20M4 20V9l6-4v15M14 20V11l6-3v12"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="home.who.w1t">Lazer kesim atölyeleri</h3>
+          <p class="card__text" data-i18n="home.who.w1d">Günde onlarca teklif çıkaran, makine kapasitesini fiyata doğru yansıtması gereken işletmeler.</p>
+        </article>
+        <article class="card card--dark">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="home.who.w2t">Sac metal imalatçıları</h3>
+          <p class="card__text" data-i18n="home.who.w2d">Kesim, büküm ve montajı birlikte satan, malzeme maliyetini kalem kalem görmesi gereken üreticiler.</p>
+        </article>
+        <article class="card card--dark">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M21 3l-7 7M8 21H3v-5M3 21l7-7"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="home.who.w3t">Taşeron üretim yapanlar</h3>
+          <p class="card__text" data-i18n="home.who.w3d">Fason iş alan, dar marjla çalıştığı için hatalı fiyatı telafi edemeyen atölyeler.</p>
+        </article>
+        <article class="card card--dark">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="m2 16 10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="home.who.w4t">Mühendislik ofisleri</h3>
+          <p class="card__text" data-i18n="home.who.w4d">Tasarım aşamasında maliyeti öngörmesi, alternatif malzeme ve kalınlıkları karşılaştırması gerekenler.</p>
+        </article>
+      </div>
+
+      <div class="text-center" style="margin-top: var(--sp-8);">
+        <p class="eyebrow" style="justify-content:center;" data-i18n="home.who.formatsTitle">Desteklenen dosya ve çıktı biçimleri</p>
+        <ul class="chips" style="margin-top: var(--sp-4);">
+          <li class="chip chip--dark">DXF</li>
+          <li class="chip chip--dark">DWG</li>
+          <li class="chip chip--dark">PDF teklif</li>
+          <li class="chip chip--dark">Excel / CSV</li>
+          <li class="chip chip--dark">Yazdırılabilir rapor</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SIK SORULANLAR
+       ==================================================================== -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="section-head section-head--center">
+        <span class="eyebrow" data-i18n="common.faqEyebrow">Sık sorulanlar</span>
+        <h2 data-i18n="home.faq.title">Merak edilenler</h2>
+      </div>
+
+      <div class="accordion reveal-stagger">
+        <details class="accordion__item">
+          <summary class="accordion__head" data-i18n="home.faq.q1">AdviseCAD tam olarak ne yapıyor?</summary>
+          <div class="accordion__body">
+            <p data-i18n="home.faq.a1">
+              AdviseCAD, 2 boyutlu CNC lazer kesim işleri için bir maliyet ve teklif
+              yazılımıdır. Parçanın teknik çizim dosyasını okur, kesimle ilgili ölçüleri
+              çıkarır, malzeme ve üretim maliyetini hesaplar ve müşteriye verilecek fiyatı
+              üretir. Makineyi süren bir CAM yazılımı değildir; makineye iş göndermeden
+              önceki hesap ve tekliflendirme adımını üstlenir.
+            </p>
+          </div>
+        </details>
+
+        <details class="accordion__item">
+          <summary class="accordion__head" data-i18n="home.faq.q2">Hangi dosya biçimlerini okuyor?</summary>
+          <div class="accordion__body">
+            <p data-i18n="home.faq.a2">
+              Sektörde en yaygın kullanılan DXF ve DWG dosyalarıyla çalışır. Çok parçalı
+              işlerde birden fazla dosyayı tek bir proje altında toplayabilirsiniz.
+            </p>
+          </div>
+        </details>
+
+        <details class="accordion__item">
+          <summary class="accordion__head" data-i18n="home.faq.q3">Kendi malzeme fiyatlarımı ve makine parametrelerimi girebiliyor muyum?</summary>
+          <div class="accordion__body">
+            <p data-i18n="home.faq.a3">
+              Evet, hesabın doğru olması buna bağlıdır. Sac fiyatları, kalınlık bazlı kesim
+              hızları, makine saat ücreti, gaz ve enerji giderleri, işçilik ve fire oranı
+              gibi tüm parametreler kendi işletmenize göre tanımlanır ve tek yerden
+              güncellenir.
+            </p>
+          </div>
+        </details>
+
+        <details class="accordion__item">
+          <summary class="accordion__head" data-i18n="home.faq.q4">Kurulum ve kullanım için CAD bilgisi gerekiyor mu?</summary>
+          <div class="accordion__body">
+            <p data-i18n="home.faq.a4">
+              Hayır. Dosyayı yükleyip malzeme ve adet bilgisini girmeniz yeterlidir.
+              Ölçüm ve hesaplama işini yazılım yapar. CAD bilgisi olan kullanıcılar
+              parametreleri daha ayrıntılı düzenleyebilir.
+            </p>
+          </div>
+        </details>
+
+        <details class="accordion__item">
+          <summary class="accordion__head" data-i18n="home.faq.q5">Yazılımı denemek için ne yapmalıyım?</summary>
+          <div class="accordion__body">
+            <p data-i18n="home.faq.a5">
+              Uygulamayı İndir sayfasından kurulum dosyasını indirip bilgisayarınıza kurun.
+              Paketler ve lisans seçenekleri için Fiyatlandırma sayfasından teklif
+              isteyebilir, ihtiyacınıza uygun kurulumu birlikte belirleyebiliriz.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       KAPANIŞ ÇAĞRISI
+       ==================================================================== -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div>
+        <h2 data-i18n="cta.title">Bir sonraki teklifinizi AdviseCAD ile hazırlayın</h2>
+        <p data-i18n="cta.text">
+          Uygulamayı indirin, kendi dosyanızla deneyin. Sonucu bugün kullandığınız
+          yöntemle karşılaştırmak beş dakikanızı alacak.
+        </p>
+      </div>
+      <div class="cta-band__actions">
+        <a class="btn btn--light btn--lg" href="indir.html" data-i18n="common.downloadApp">Uygulamayı İndir</a>
+        <a class="btn btn--ghost-light btn--lg" href="iletisim.html" data-i18n="common.contactUs">Bize ulaşın</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================================================================
+     ALT BİLGİ  (aynı işaretleme tüm sayfalarda tekrarlanır)
+     ====================================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <a class="logo logo--footer" href="index.html">
+          <img class="logo__img" src="assets/logo-light.png" alt="AdviseCAD" width="668" height="176">
+        </a>
+        <p data-i18n="footer.about">
+          2 boyutlu CNC lazer kesim süreçleri için ölçüm, maliyet analizi ve
+          fiyatlandırma yazılımı. Teklif masanızdaki tahmini hesapla değiştirir.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="footer__title" data-i18n="footer.product">Ürün</h2>
+        <ul class="footer__links">
+          <li><a href="ozellikler.html" data-i18n="nav.features">Özellikler</a></li>
+          <li><a href="nasil-calisir.html" data-i18n="nav.how">Nasıl Çalışır?</a></li>
+          <li><a href="fiyatlandirma.html" data-i18n="nav.pricing">Fiyatlandırma</a></li>
+          <li><a href="indir.html" data-i18n="common.downloadApp">Uygulamayı İndir</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer__title" data-i18n="footer.company">Kurumsal</h2>
+        <ul class="footer__links">
+          <li><a href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a></li>
+          <li><a href="iletisim.html" data-i18n="nav.contact">İletişim</a></li>
+          <li><a href="fiyatlandirma.html#sss" data-i18n="footer.faq">Sık Sorulanlar</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer__title" data-i18n="footer.contact">İletişim</h2>
+        <ul class="footer__links">
+          <li><a href="mailto:info@advisecad.com">info@advisecad.com</a></li>
+          <li><a href="tel:+900000000000">+90 (000) 000 00 00</a></li>
+          <li><span data-i18n="footer.hours">Hafta içi 09:00 – 18:00</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>© <span class="num">2026</span> AdviseCAD. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span></p>
+      <ul class="footer__legal">
+        <li><a href="iletisim.html" data-i18n="footer.privacy">Gizlilik</a></li>
+        <li><a href="iletisim.html" data-i18n="footer.terms">Kullanım Koşulları</a></li>
+        <li><a href="iletisim.html" data-i18n="footer.kvkk">KVKK</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

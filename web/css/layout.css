@@ -1,0 +1,375 @@
+/* ==========================================================================
+   AdviseCAD — Yerleşim Katmanı
+   Üst menü (JavaScript'siz mobil menü dahil) ve alt bilgi.
+   ========================================================================== */
+
+/* ==========================================================================
+   ÜST MENÜ
+   ========================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background: color-mix(in srgb, var(--white) 82%, transparent);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  min-height: var(--header-h);
+}
+
+/* ---------- Logo ----------
+   Marka kilidi (mark + AdviseCAD + slogan) tek bir görseldir.
+   assets/logo.png          → açık zeminler (üst menü)
+   assets/logo-light.png    → koyu zeminler (alt bilgi)
+   Yalnızca markın gerektiği yerler için logo-mark(-light).png de mevcuttur. */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  text-decoration: none;
+}
+
+.logo__img {
+  display: block;
+  height: 40px;
+  width: auto;
+  /* Görselin kendi yüksekliğinin bir kısmı slogan şeridi olduğundan,
+     optik hizalama için üstten hafif kırpma yapılmaz; boşluk dengelidir. */
+}
+
+.logo--footer .logo__img {
+  height: 52px;
+}
+
+@media (max-width: 1000px) {
+  .logo__img {
+    height: 34px;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo__img {
+    height: 30px;
+  }
+}
+
+/* ---------- Ana gezinme ---------- */
+.nav {
+  margin-inline-start: auto;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.25rem, -0.5rem + 1.6vw, 1.25rem);
+}
+
+.nav__link {
+  display: block;
+  position: relative;
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--r-sm);
+  color: var(--ink-700);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--t-fast);
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  inset-inline: var(--sp-3);
+  bottom: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--green-500);
+  transform: scaleX(0);
+  transform-origin: inline-start;
+  transition: transform var(--t-base);
+}
+
+.nav__link:hover {
+  color: var(--green-700);
+}
+
+.nav__link:hover::after,
+.nav__link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nav__link[aria-current="page"] {
+  color: var(--green-700);
+  font-weight: 600;
+}
+
+/* ---------- Menü sağındaki aksiyonlar ---------- */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex: none;
+}
+
+/* ---------- Mobil menü anahtarı (saf CSS — checkbox tekniği) ----------
+   Onay kutusu görsel olarak gizlidir ama klavye ile odaklanılabilir;
+   Boşluk tuşu menüyü açıp kapatır. */
+.nav-toggle {
+  display: none; /* masaüstünde tamamen devre dışı */
+  position: absolute;
+  opacity: 0;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.nav-toggle__button {
+  display: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--white);
+  cursor: pointer;
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+
+.nav-toggle__bars {
+  display: block;
+  position: relative;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ink-900);
+  transition: background var(--t-fast);
+}
+
+.nav-toggle__bars::before,
+.nav-toggle__bars::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ink-900);
+  transition: transform var(--t-base);
+}
+
+.nav-toggle__bars::before {
+  top: -6px;
+}
+
+.nav-toggle__bars::after {
+  top: 6px;
+}
+
+/* Açık durum: hamburger → çarpı */
+.nav-toggle:checked ~ .nav-toggle__button .nav-toggle__bars {
+  background: transparent;
+}
+
+.nav-toggle:checked ~ .nav-toggle__button .nav-toggle__bars::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle:checked ~ .nav-toggle__button .nav-toggle__bars::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.nav-toggle:focus-visible ~ .nav-toggle__button {
+  outline: 3px solid var(--green-500);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   MOBİL / TABLET GEZİNME
+   ========================================================================== */
+@media (max-width: 1000px) {
+  .header__inner {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: block;
+    inset-inline-end: var(--gutter);
+    top: 16px;
+  }
+
+  .nav-toggle__button {
+    display: grid;
+    order: 3;
+    margin-inline-start: auto;
+  }
+
+  /* Menü panelini kapalı tut — açılırken yüksekliği canlanır */
+  .nav {
+    order: 4;
+    flex-basis: 100%;
+    margin-inline-start: 0;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--t-base);
+  }
+
+  .nav__inner {
+    overflow: hidden;
+  }
+
+  .nav-toggle:checked ~ .nav {
+    grid-template-rows: 1fr;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-block: var(--sp-3) var(--sp-5);
+    border-top: 1px solid var(--border);
+    margin-top: var(--sp-1);
+  }
+
+  .nav__link {
+    padding: var(--sp-4) var(--sp-2);
+    font-size: 1.05rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav__link::after {
+    display: none;
+  }
+
+  .nav__link[aria-current="page"] {
+    color: var(--green-700);
+    background: var(--green-50);
+    border-radius: var(--r-sm);
+  }
+
+  /* Mobilde indirme butonu menü panelinin sonunda tam genişlik olur */
+  .header__actions {
+    order: 4;
+    flex-basis: 100%;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--t-base);
+  }
+
+  .nav-toggle:checked ~ .header__actions {
+    grid-template-rows: 1fr;
+  }
+
+  .header__actions-inner {
+    overflow: hidden;
+  }
+
+  .header__actions .btn {
+    width: 100%;
+    margin-block: var(--sp-1) var(--sp-5);
+  }
+}
+
+@media (min-width: 1001px) {
+  .header__actions-inner,
+  .nav__inner {
+    display: contents;
+  }
+}
+
+/* ==========================================================================
+   ALT BİLGİ
+   ========================================================================== */
+.footer {
+  background: var(--green-950);
+  color: var(--text-on-dark-muted);
+  padding-block: var(--sp-9) var(--sp-6);
+  font-size: var(--fs-sm);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.6fr) repeat(3, minmax(150px, 1fr));
+  gap: var(--sp-7) var(--sp-6);
+}
+
+@media (max-width: 900px) {
+  .footer__grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+.footer__brand p {
+  margin-top: var(--sp-4);
+  max-width: 42ch;
+  line-height: 1.65;
+  color: var(--text-on-dark-muted);
+}
+
+.footer__title {
+  margin-bottom: var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--green-200);
+}
+
+.footer__links li + li {
+  margin-top: var(--sp-3);
+}
+
+.footer__links a {
+  color: var(--text-on-dark-muted);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+
+.footer__links a:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-top: var(--sp-8);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--border-on-dark);
+  font-size: var(--fs-xs);
+  color: var(--ink-300);
+}
+
+.footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-5);
+}
+
+.footer__legal a {
+  color: var(--ink-300);
+  text-decoration: none;
+}
+
+.footer__legal a:hover {
+  color: var(--white);
+}
